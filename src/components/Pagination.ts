@@ -1,5 +1,5 @@
 import {
-    defineComponent, h, provide, inject, InjectionKey, Slot, toRefs, ref, Ref, watch,
+    defineComponent, h, provide, inject, InjectionKey, Slots, toRefs, ref, Ref, watch, VNodeArrayChildren,
 } from 'vue';
 import { Paginator } from '@victor-michaux/pagination';
 
@@ -15,6 +15,10 @@ function usePaginationContext(component: string): State {
     }
 
     return context;
+}
+
+function getDefaultSlot(slots: Slots, scope: Object|null = null): VNodeArrayChildren {
+    return slots.default ? slots.default(scope ?? {}) : [];
 }
 
 export const Pagination = defineComponent({
@@ -58,11 +62,9 @@ export const Pagination = defineComponent({
             paginator.value.padding = newValue;
         });
 
-        const defaultSlot = slots.default as Slot;
-
         provide(PaginationContext, paginator);
 
-        return () => h('ul', defaultSlot());
+        return () => h('ul', getDefaultSlot(slots));
     },
 });
 
@@ -72,11 +74,11 @@ export const PaginationPagesList = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationPagesList');
 
-        const defaultSlot = slots.default as Slot;
-
-        return () => h('ul', defaultSlot({
+        const scope = {
             pages: paginator.value.pages,
-        }));
+        };
+
+        return () => h('ul', getDefaultSlot(slots, scope));
     },
 });
 
@@ -97,14 +99,14 @@ export const PaginationPagesListButton = defineComponent({
 
         const paginator = usePaginationContext('PaginationPagesListButton');
 
-        const defaultSlot = slots.default as Slot;
-
-        return () => h('li', defaultSlot({
+        const scope = {
             isActive: paginator.value.activePage === page.value,
             selectCurrentPageEvents: {
                 click: () => paginator.value.selectPage(page.value),
             },
-        }));
+        };
+
+        return () => h('li', getDefaultSlot(slots, scope));
     },
 });
 
@@ -114,14 +116,14 @@ export const PaginationButtonFirstPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonFirstPage');
 
-        const defaultSlot = slots.default as Slot;
-
-        return () => h('li', defaultSlot({
+        const scope = {
             disabled: paginator.value.activePage === 1,
             selectFirstPageEvents: {
                 click: () => paginator.value.selectFirstPage(),
             },
-        }));
+        };
+
+        return () => h('li', getDefaultSlot(slots, scope));
     },
 });
 
@@ -131,14 +133,14 @@ export const PaginationButtonPreviousPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonPreviousPage');
 
-        const defaultSlot = slots.default as Slot;
-
-        return () => h('li', defaultSlot({
+        const scope = {
             disabled: paginator.value.activePage === 1,
             selectPreviousPageEvents: {
                 click: () => paginator.value.selectPreviousPage(),
             },
-        }));
+        };
+
+        return () => h('li', getDefaultSlot(slots, scope));
     },
 });
 
@@ -148,14 +150,14 @@ export const PaginationButtonNextPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonNextPage');
 
-        const defaultSlot = slots.default as Slot;
-
-        return () => h('li', defaultSlot({
+        const scope = {
             disabled: paginator.value.activePage === paginator.value.totalPages,
             selectNextPageEvents: {
                 click: () => paginator.value.selectNextPage(),
             },
-        }));
+        };
+
+        return () => h('li', getDefaultSlot(slots, scope));
     },
 });
 
@@ -165,13 +167,13 @@ export const PaginationButtonLastPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonLastPage');
 
-        const defaultSlot = slots.default as Slot;
-
-        return () => h('li', defaultSlot({
+        const scope = {
             disabled: paginator.value.activePage === paginator.value.totalPages,
             selectLastPageEvents: {
                 click: () => paginator.value.selectLastPage(),
             },
-        }));
+        };
+
+        return () => h('li', getDefaultSlot(slots, scope));
     },
 });
