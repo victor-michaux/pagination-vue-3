@@ -11,10 +11,10 @@
     }
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --config ./vite.config.ts serve example",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint . --ext js,ts"
+    "lint": "eslint . --ext js,ts,vue"
   },
   "dependencies": {
     "@victor-michaux/pagination": "0.2.0",

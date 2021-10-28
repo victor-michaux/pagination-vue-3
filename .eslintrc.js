@@ -20,6 +20,7 @@ module.exports = {
         'max-len': ['error', 120],
         indent: ['error', 4],
         'vue/one-component-per-file': 'off',
+        'vue/html-indent': ['error', 4],
         'import/extensions': [
             'error',
             'ignorePackages',
