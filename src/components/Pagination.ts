@@ -74,11 +74,9 @@ export const PaginationPagesList = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationPagesList');
 
-        const scope = {
+        return () => h('ul', getDefaultSlot(slots, {
             pages: paginator.value.pages,
-        };
-
-        return () => h('ul', getDefaultSlot(slots, scope));
+        }));
     },
 });
 
@@ -99,14 +97,12 @@ export const PaginationPagesListButton = defineComponent({
 
         const paginator = usePaginationContext('PaginationPagesListButton');
 
-        const scope = {
+        return () => h('li', getDefaultSlot(slots, {
             isActive: paginator.value.activePage === page.value,
             selectCurrentPageEvents: {
                 click: () => paginator.value.selectPage(page.value),
             },
-        };
-
-        return () => h('li', getDefaultSlot(slots, scope));
+        }));
     },
 });
 
@@ -116,14 +112,12 @@ export const PaginationButtonFirstPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonFirstPage');
 
-        const scope = {
+        return () => h('li', getDefaultSlot(slots, {
             disabled: paginator.value.activePage === 1,
             selectFirstPageEvents: {
                 click: () => paginator.value.selectFirstPage(),
             },
-        };
-
-        return () => h('li', getDefaultSlot(slots, scope));
+        }));
     },
 });
 
@@ -133,14 +127,12 @@ export const PaginationButtonPreviousPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonPreviousPage');
 
-        const scope = {
+        return () => h('li', getDefaultSlot(slots, {
             disabled: paginator.value.activePage === 1,
             selectPreviousPageEvents: {
                 click: () => paginator.value.selectPreviousPage(),
             },
-        };
-
-        return () => h('li', getDefaultSlot(slots, scope));
+        }));
     },
 });
 
@@ -150,14 +142,12 @@ export const PaginationButtonNextPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonNextPage');
 
-        const scope = {
+        return () => h('li', getDefaultSlot(slots, {
             disabled: paginator.value.activePage === paginator.value.totalPages,
             selectNextPageEvents: {
                 click: () => paginator.value.selectNextPage(),
             },
-        };
-
-        return () => h('li', getDefaultSlot(slots, scope));
+        }));
     },
 });
 
@@ -167,13 +157,11 @@ export const PaginationButtonLastPage = defineComponent({
     setup(props, { slots }) {
         const paginator = usePaginationContext('PaginationButtonLastPage');
 
-        const scope = {
+        return () => h('li', getDefaultSlot(slots, {
             disabled: paginator.value.activePage === paginator.value.totalPages,
             selectLastPageEvents: {
                 click: () => paginator.value.selectLastPage(),
             },
-        };
-
-        return () => h('li', getDefaultSlot(slots, scope));
+        }));
     },
 });
