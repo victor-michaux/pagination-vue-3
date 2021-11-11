@@ -3,33 +3,39 @@
         :active-page="activePage"
         :total-pages="totalPages"
         :padding="padding"
+        class="flex gap-x-2"
         @update:activePage="updateActivePage"
     >
-        <PaginationButtonFirstPage
-            v-slot="{ disabled, selectFirstPageEvents }"
-        >
-            <button
-                :disabled="disabled"
-                :class="{'disabled': disabled}"
-                v-on="selectFirstPageEvents"
-            >
-                First
-            </button>
-        </PaginationButtonFirstPage>
-
         <PaginationButtonPreviousPage
             v-slot="{ disabled, selectPreviousPageEvents}"
         >
             <button
                 :disabled="disabled"
-                :class="{'disabled': disabled}"
+                :class="{'invisible': disabled}"
+                class="h-12 w-12 flex items-center justify-center bg-white hover:bg-blue-100 text-blue-800 rounded-full border border-blue-100 shadow cursor-pointer"
                 v-on="selectPreviousPageEvents"
             >
-                Prev
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"
+                    />
+                </svg>
             </button>
         </PaginationButtonPreviousPage>
 
-        <PaginationPagesList v-slot="{ pages }">
+        <PaginationPagesList
+            v-slot="{ pages }"
+            class="flex gap-x-2"
+        >
             <PaginationPagesListButton
                 v-for="page in pages"
                 v-slot="{ isActive, selectCurrentPageEvents }"
@@ -37,7 +43,12 @@
                 :page="page"
             >
                 <button
-                    :class="{'active': isActive }"
+                    :class="[
+                        isActive
+                            ? 'bg-blue-800 hover:bg-blue-900 text-white border-blue-800 hover:border-blue-900'
+                            : 'bg-white hover:bg-blue-100 text-blue-800 border-blue-100'
+                    ]"
+                    class="h-12 w-12 flex items-center justify-center font-semibold text-lg border shadow rounded-full transition-all transform duration-250 ease-in-out"
                     v-on="selectCurrentPageEvents"
                 >
                     {{ page }}
@@ -50,24 +61,26 @@
         >
             <button
                 :disabled="disabled"
-                :class="{'disabled': disabled}"
+                :class="{'invisible': disabled}"
+                class="h-12 w-12 flex items-center justify-center bg-white hover:bg-blue-100 text-blue-800 rounded-full border border-blue-100 shadow cursor-pointer"
                 v-on="selectNextPageEvents"
             >
-                Next
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                    />
+                </svg>
             </button>
         </PaginationButtonNextPage>
-
-        <PaginationButtonLastPage
-            v-slot="{ disabled, selectLastPageEvents }"
-        >
-            <button
-                :disabled="disabled"
-                :class="{'disabled': disabled}"
-                v-on="selectLastPageEvents"
-            >
-                Last
-            </button>
-        </PaginationButtonLastPage>
     </Pagination>
 </template>
 
@@ -78,10 +91,8 @@ import {
     Pagination,
     PaginationPagesList,
     PaginationPagesListButton,
-    PaginationButtonFirstPage,
     PaginationButtonPreviousPage,
     PaginationButtonNextPage,
-    PaginationButtonLastPage,
 } from '../../src/components/Pagination';
 
 export default defineComponent({
@@ -89,10 +100,8 @@ export default defineComponent({
         Pagination,
         PaginationPagesList,
         PaginationPagesListButton,
-        PaginationButtonFirstPage,
         PaginationButtonPreviousPage,
         PaginationButtonNextPage,
-        PaginationButtonLastPage,
     },
 
     setup() {
@@ -113,13 +122,3 @@ export default defineComponent({
     },
 });
 </script>
-
-<style scoped>
-.active {
-  background-color: aqua;
-}
-
-.disabled {
-  background-color: brown;
-}
-</style>
