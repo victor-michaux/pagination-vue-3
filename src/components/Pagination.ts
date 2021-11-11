@@ -1,9 +1,9 @@
 import {
     defineComponent, h, provide, inject, InjectionKey, Slots, toRefs, ref, Ref, watch, VNodeArrayChildren,
 } from 'vue';
-import { Paginator } from '@victor-michaux/pagination';
+import { Pagination as PaginationBase } from '@victor-michaux/pagination';
 
-type State = Ref<Paginator>;
+type State = Ref<PaginationBase>;
 
 const PaginationContext = Symbol('PaginationContext') as InjectionKey<State>;
 
@@ -48,7 +48,14 @@ export const Pagination = defineComponent({
             emit('update:activePage', page);
         }
 
-        const paginator = ref(new Paginator(activePage.value, totalPages.value, onActivePageUpdated, padding.value));
+        const paginator = ref(
+            new PaginationBase(
+                activePage.value,
+                totalPages.value,
+                onActivePageUpdated,
+                padding.value,
+            ),
+        );
 
         watch(activePage, (newValue) => {
             paginator.value.activePage = newValue;
