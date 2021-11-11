@@ -4,6 +4,7 @@
   "files": [
     "dist"
   ],
+  "license": "MIT",
   "main": "./dist/pagination.umd.js",
   "module": "./dist/pagination.es.js",
   "exports": {
