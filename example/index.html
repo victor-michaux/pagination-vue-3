@@ -4,9 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <script>
+      console.log(tailwind);
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blue: tailwind.colors.sky,
+            },
+          },
+        },
+      }
+    </script>
     <title>Vite App</title>
   </head>
-  <body>
+  <body class="bg-gray-100">
     <div id="app"></div>
     <script type="module" src="./src/main.ts"></script>
   </body>

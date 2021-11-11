@@ -19,8 +19,6 @@ module.exports = {
     rules: {
         'max-len': ['error', 120],
         indent: ['error', 4],
-        'vue/one-component-per-file': 'off',
-        'vue/html-indent': ['error', 4],
         'import/extensions': [
             'error',
             'ignorePackages',
@@ -45,4 +43,16 @@ module.exports = {
             },
         },
     },
+
+    overrides: [
+        {
+            files: ['**/*.vue'],
+            rules: {
+                'max-len': 'off',
+                'vue/max-len': ['error', 240],
+                'vue/one-component-per-file': 'off',
+                'vue/html-indent': ['error', 4],
+            },
+        },
+    ],
 };
