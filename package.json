@@ -1,7 +1,9 @@
 {
   "name": "paginator-vue-3",
   "version": "0.0.0",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/pagination.umd.js",
   "module": "./dist/pagination.es.js",
   "exports": {
@@ -17,7 +19,7 @@
     "lint": "eslint . --ext js,ts,vue"
   },
   "dependencies": {
-    "@victor-michaux/pagination": "0.2.0",
+    "@victor-michaux/pagination": "^0.2.1",
     "vue": "^3.2.16"
   },
   "devDependencies": {
