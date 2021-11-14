@@ -1,5 +1,5 @@
 {
-  "name": "paginator-vue-3",
+  "name": "@victor-michaux/pagination-vue-3",
   "version": "0.1.1",
   "files": [
     "dist"
@@ -14,6 +14,7 @@
     }
   },
   "typings": "dist/types/src/main.d.ts",
+  "repository": "git@github.com:victor-michaux/pagination-vue-3.git",
   "scripts": {
     "dev": "vite --config ./vite.config.ts serve example",
     "build": "vite build && tsc",
