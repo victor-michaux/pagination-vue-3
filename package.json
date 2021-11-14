@@ -1,21 +1,22 @@
 {
   "name": "paginator-vue-3",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "files": [
     "dist"
   ],
   "license": "MIT",
-  "main": "./dist/pagination.umd.js",
-  "module": "./dist/pagination.es.js",
+  "main": "./dist/pagination-vue-3.umd.js",
+  "module": "./dist/pagination-vue-3.es.js",
   "exports": {
     ".": {
-      "import": "./dist/pagination.es.js",
-      "require": "./dist/pagination.umd.js"
+      "import": "./dist/pagination-vue-3.es.js",
+      "require": "./dist/pagination-vue-3.umd.js"
     }
   },
+  "typings": "dist/types/src/main.d.ts",
   "scripts": {
     "dev": "vite --config ./vite.config.ts serve example",
-    "build": "vite build",
+    "build": "vite build && tsc",
     "serve": "vite preview",
     "lint": "eslint . --ext js,ts,vue"
   },

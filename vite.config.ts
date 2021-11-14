@@ -7,8 +7,8 @@ export default defineConfig({
     build: {
         lib: {
             entry: './src/main.ts',
-            name: 'Pagination',
-            fileName: (format) => `pagination.${format}.js`,
+            name: 'PaginationVue3',
+            fileName: (format) => `pagination-vue-3.${format}.js`,
         },
     },
 });
