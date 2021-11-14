@@ -548,14 +548,14 @@ __metadata:
   linkType: hard
 
 "ajv@npm:^8.0.1":
-  version: 8.7.1
-  resolution: "ajv@npm:8.7.1"
+  version: 8.8.0
+  resolution: "ajv@npm:8.8.0"
   dependencies:
     fast-deep-equal: ^3.1.1
     json-schema-traverse: ^1.0.0
     require-from-string: ^2.0.2
     uri-js: ^4.2.2
-  checksum: e8102fa84807d5008b7439f8ffd3ccae0f98d37010c18624982d277cb8e324efd9149a5e1f56326c8793e21b858e7e220c3250ee2c29efb52fea943b8512e7aa
+  checksum: a2543fcc440ab4fca2d2c3d625c52cd24d7d7b61f4e07f1dd2fb4c478367a84cf6cd3cf03c61be061bf804ed4410f3e363b7e0afb44d417a0e9d4bbad67eee0a
   languageName: node
   linkType: hard
 
@@ -3014,8 +3014,8 @@ __metadata:
   linkType: hard
 
 "rollup@npm:^2.57.0":
-  version: 2.59.0
-  resolution: "rollup@npm:2.59.0"
+  version: 2.60.0
+  resolution: "rollup@npm:2.60.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -3023,7 +3023,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 9fbaa72b8ff840b366f4da3ba35379a3d115fd52e1dced1693995005a9ff7e1699829ff16d8eb65c0a9eff26b57b4914dca7511f22e4d900af8c757d7129124d
+  checksum: ef267b49a203f3db86d6db8c63de8737d6e3995d988dadf35c1922964c21cafbb95990543cfc716356d31bf6ca3975e58d9195df85b28721ecdc9acd3693acca
   languageName: node
   linkType: hard
 
@@ -3539,15 +3539,15 @@ __metadata:
   linkType: hard
 
 "vscode-json-languageservice@npm:^4.1.7":
-  version: 4.1.9
-  resolution: "vscode-json-languageservice@npm:4.1.9"
+  version: 4.1.10
+  resolution: "vscode-json-languageservice@npm:4.1.10"
   dependencies:
     jsonc-parser: ^3.0.0
     vscode-languageserver-textdocument: ^1.0.1
     vscode-languageserver-types: ^3.16.0
     vscode-nls: ^5.0.0
     vscode-uri: ^3.0.2
-  checksum: 3be0d4f7626316c42fdebc0037ee01030c3cc8c7bc85651acddee96e0fee363f7664beeb0a81e8df9550830554d15545ac8a2f7f9aec12bf3267abeee5dd23da
+  checksum: ff0c7ab92fdf31b14e3c4ed1be464bcc049a09dddf9100d50839a99bb1935b8b76b4401af7ca871978b335aa405055cad4394682b583618c4b1e698fcafabd56
   languageName: node
   linkType: hard
 
