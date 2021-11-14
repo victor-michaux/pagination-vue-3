@@ -286,6 +286,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@victor-michaux/pagination-vue-3@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@victor-michaux/pagination-vue-3@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^4.33.0
+    "@typescript-eslint/parser": ^4.33.0
+    "@victor-michaux/pagination": ^0.2.1
+    "@vitejs/plugin-vue": ^1.9.2
+    eslint: ^7.32.0
+    eslint-config-airbnb-base: ^14.2.1
+    eslint-plugin-import: ^2.24.2
+    eslint-plugin-vue: ^7.19.1
+    typescript: ^4.4.3
+    vite: ^2.6.0
+    vue: ^3.2.16
+    vue-tsc: ^0.3.0
+  languageName: unknown
+  linkType: soft
+
 "@victor-michaux/pagination@npm:^0.2.1":
   version: 0.2.1
   resolution: "@victor-michaux/pagination@npm:0.2.1"
@@ -2639,25 +2658,6 @@ __metadata:
   checksum: 3b5303f77eb7722144154288bfd96f799f8ff3e2b2b39330efe38db5dd359e4fb27012464cd85cb0a76e9b7edd1b443568cb3192c22e7cffc34989df0bafd605
   languageName: node
   linkType: hard
-
-"paginator-vue-3@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "paginator-vue-3@workspace:."
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^4.33.0
-    "@typescript-eslint/parser": ^4.33.0
-    "@victor-michaux/pagination": ^0.2.1
-    "@vitejs/plugin-vue": ^1.9.2
-    eslint: ^7.32.0
-    eslint-config-airbnb-base: ^14.2.1
-    eslint-plugin-import: ^2.24.2
-    eslint-plugin-vue: ^7.19.1
-    typescript: ^4.4.3
-    vite: ^2.6.0
-    vue: ^3.2.16
-    vue-tsc: ^0.3.0
-  languageName: unknown
-  linkType: soft
 
 "parent-module@npm:^1.0.0":
   version: 1.0.1
